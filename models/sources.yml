@@ -6,3 +6,4 @@ sources:
     schema: raw_northwind  
     tables:
       - name: customer
+      - name: _order_
