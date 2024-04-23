@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: northwind
+    database: northwind  
+    schema: raw_northwind  
+    tables:
+      - name: customer
