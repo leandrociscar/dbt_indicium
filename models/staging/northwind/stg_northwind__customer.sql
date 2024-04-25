@@ -1,28 +1,25 @@
-with 
+with
 
-source as (
+    source as (select * from {{ source("northwind", "customer") }}),
 
-    select * from {{ source('northwind', 'customer') }}
+    renamed as (
 
-),
+        select
+            id,
+            companyname,
+            contactname,
+            contacttitle,
+            address,
+            city,
+            region,
+            postalcode,
+            country,
+            phone,
+            fax
 
-renamed as (
+        from source
 
-    select
-        id,
-        companyname,
-        contactname,
-        contacttitle,
-        address,
-        city,
-        region,
-        postalcode,
-        country,
-        phone,
-        fax
+    )
 
-    from source
-
-)
-
-select * from renamed
+select *
+from renamed
